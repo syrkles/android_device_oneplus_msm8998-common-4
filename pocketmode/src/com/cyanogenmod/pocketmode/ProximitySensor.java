@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.pocketmode;
+package com.cyanogenmod.pocketmode;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -24,7 +24,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
 
-import org.lineageos.internal.util.FileUtils;
+import com.android.internal.util.liquid.FileUtils;
 
 public class ProximitySensor implements SensorEventListener {
 
@@ -44,7 +44,8 @@ public class ProximitySensor implements SensorEventListener {
     public ProximitySensor(Context context) {
         boolean found = false;
         mContext = context;
-        mSensorManager = mContext.getSystemService(SensorManager.class);
+        mSensorManager = (SensorManager)
+                mContext.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
         if (FileUtils.fileExists(CHEESEBURGER_FILE)) {
