@@ -104,6 +104,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# Fling velocities
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.min.fling_velocity=150 \
+    ro.max.fling_velocity=20000
+
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config
